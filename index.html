@@ -7,746 +7,533 @@
 <meta name="description" content="Debbie Spence, a multiple award-winning author, creates stories with fun, hope and adventure. Her new memoir is Searching for Home – The European Journey of a Frazzled Mom.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Parisienne&family=Jost:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&family=Mrs+Saint+Delafield&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<!--
+  Photos: free under the Unsplash License, loaded from Unsplash. Photographers are credited in the footer.
+  Personal photos: add Debbie's own photo at img/debbie.jpg and the real cover at img/cover.jpg.
+  Until those files exist, the page falls back to the photo and cover design below.
+-->
 <style>
   :root {
-    --cream: #fbf5ea;
-    --paper: #f5ecdc;
-    --linen: #efe2cc;
-    --ink: #2c2f3a;
-    --ink-soft: #565866;
-    --rouge: #b4473a;
-    --rouge-deep: #8e3329;
-    --sun: #e2a443;
-    --sun-soft: #f3d39b;
-    --sage: #7d8b6a;
-    --navy: #2f3e5c;
-    --rule: rgba(44, 47, 58, .14);
+    --cream: #f8f2e7;
+    --paper: #f2e9d8;
+    --ink: #2b2520;
+    --ink-soft: #5f554b;
+    --terracotta: #a9533a;
+    --terracotta-deep: #87402c;
+    --honey: #d9a24e;
+    --olive: #6f7552;
+    --rule: rgba(43, 37, 32, .14);
     --serif: "Cormorant Garamond", Georgia, serif;
     --body: "Lora", Georgia, serif;
-    --script: "Parisienne", cursive;
+    --hand: "Caveat", cursive;
+    --sign: "Mrs Saint Delafield", cursive;
     --sans: "Jost", system-ui, sans-serif;
-    --max: 1160px;
+    --max: 1180px;
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--cream);
+    background: var(--cream) var(--grain);
     color: var(--ink);
     font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 17.5px;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  img, svg { display: block; max-width: 100%; }
+  img { display: block; max-width: 100%; }
   a { color: inherit; }
-  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-  @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  @media (max-width: 600px) { .wrap { padding-left: 16px; padding-right: 16px; } }
 
-  .eyebrow {
-    font-family: var(--sans);
-    font-size: 12.5px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--rouge);
-    font-weight: 500;
-  }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; margin: 0; text-wrap: balance; }
-  h2 { font-size: clamp(34px, 4.6vw, 52px); }
-  h3 { font-size: 26px; }
-  p { margin: 0 0 1em; text-wrap: pretty; }
-  .script { font-family: var(--script); font-weight: 400; color: var(--rouge); }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.08; margin: 0; text-wrap: balance; }
+  h2 { font-size: clamp(36px, 4.8vw, 56px); }
+  p { margin: 0 0 1.05em; text-wrap: pretty; }
+  .eyebrow { font-family: var(--sans); font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; color: var(--terracotta); }
+  .hand { font-family: var(--hand); font-weight: 500; }
+
+  /* Photos sit on a warm base, so a slow or missing image still looks intentional */
+  .photo { position: relative; overflow: hidden; background: linear-gradient(160deg, #e9c99a, #c98f63); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
 
   .btn {
     display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--sans); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
-    text-decoration: none;
-    padding: 15px 26px;
-    border-radius: 999px;
-    border: 1.5px solid var(--rouge);
-    background: var(--rouge); color: var(--cream);
-    transition: background .25s, color .25s, transform .25s;
+    font-family: var(--sans); font-size: 13.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+    text-decoration: none; padding: 15px 26px; border-radius: 999px;
+    border: 1.5px solid var(--terracotta); background: var(--terracotta); color: var(--cream);
+    transition: background .25s, color .25s, border-color .25s, transform .25s;
   }
-  .btn:hover { background: var(--rouge-deep); border-color: var(--rouge-deep); transform: translateY(-1px); }
-  .btn.ghost { background: transparent; color: var(--rouge); }
-  .btn.ghost:hover { background: var(--rouge); color: var(--cream); }
+  .btn:hover { background: var(--terracotta-deep); border-color: var(--terracotta-deep); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--terracotta); }
+  .btn.ghost:hover { background: var(--terracotta); color: var(--cream); }
+  .btn.light { background: var(--cream); border-color: var(--cream); color: var(--ink); }
+  .btn.light:hover { background: #fff; border-color: #fff; }
+  .btn.outline-light { background: transparent; border-color: rgba(248,242,231,.7); color: var(--cream); }
+  .btn.outline-light:hover { background: var(--cream); color: var(--ink); }
 
-  /* ---------- Awning ---------- */
-  .awning {
-    height: 22px;
-    background: repeating-linear-gradient(90deg, var(--rouge) 0 34px, var(--cream) 34px 68px);
-    position: relative;
-  }
-  .awning::after {
-    content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px;
+  /* ---------- Hero ---------- */
+  .hero { position: relative; min-height: min(94vh, 880px); display: flex; flex-direction: column; color: var(--cream); }
+  .hero > .photo { position: absolute; inset: 0; }
+  .hero > .photo::after {
+    content: ""; position: absolute; inset: 0;
     background:
-      radial-gradient(circle at 17px 0, var(--rouge) 16px, transparent 17px) 0 0 / 68px 14px repeat-x,
-      radial-gradient(circle at 51px 0, var(--cream) 16px, transparent 17px) 0 0 / 68px 14px repeat-x;
-    filter: drop-shadow(0 3px 2px rgba(44,47,58,.08));
+      linear-gradient(180deg, rgba(28,18,10,.55) 0%, rgba(28,18,10,.08) 28%, rgba(28,18,10,.12) 55%, rgba(28,18,10,.78) 100%),
+      linear-gradient(90deg, rgba(28,18,10,.45) 0%, rgba(28,18,10,0) 60%);
   }
-
-  /* ---------- Nav ---------- */
-  header.site { position: relative; z-index: 5; padding-top: 22px; }
-  .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 18px; padding-bottom: 18px; }
-  .brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-  .brand .name { font-family: var(--script); font-size: 38px; color: var(--ink); }
-  .brand .tag { font-family: var(--sans); font-size: 10.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-soft); margin-top: 4px; padding-left: 4px; }
-  .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; }
-  .nav ul a {
-    font-family: var(--sans); font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
-    text-decoration: none; color: var(--ink); position: relative; padding: 4px 0;
-  }
-  .nav ul a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1.5px; background: var(--rouge); transition: right .3s; }
+  .nav { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 26px; padding-bottom: 26px; }
+  .brand { text-decoration: none; font-family: var(--serif); font-size: 30px; letter-spacing: .02em; line-height: 1; }
+  .brand small { display: block; font-family: var(--sans); font-size: 10.5px; letter-spacing: .32em; text-transform: uppercase; opacity: .85; margin-top: 6px; }
+  .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 32px; }
+  .nav ul a { font-family: var(--sans); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; position: relative; padding: 4px 0; }
+  .nav ul a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1.5px; background: var(--honey); transition: right .3s; }
   .nav ul a:hover::after { right: 0; }
-  .menu-btn { display: none; background: none; border: 1.5px solid var(--ink); border-radius: 999px; padding: 8px 16px; font-family: var(--sans); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); cursor: pointer; }
+  .menu-btn { display: none; background: none; border: 1.5px solid rgba(248,242,231,.75); color: var(--cream); border-radius: 999px; padding: 8px 16px; font-family: var(--sans); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; }
   @media (max-width: 900px) {
     .menu-btn { display: inline-block; }
     .nav ul {
-      display: none; position: absolute; top: 100%; left: 16px; right: 16px;
-      flex-direction: column; gap: 0; background: var(--cream);
-      border: 1px solid var(--rule); border-radius: 18px; padding: 10px 22px;
-      box-shadow: 0 20px 40px -20px rgba(44,47,58,.3);
+      display: none; position: absolute; top: 100%; left: 16px; right: 16px; flex-direction: column; gap: 0;
+      background: var(--cream); color: var(--ink); border-radius: 16px; padding: 8px 22px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.45);
     }
     .nav ul.open { display: flex; }
     .nav ul li + li { border-top: 1px solid var(--rule); }
     .nav ul a { display: block; padding: 14px 0; }
-    .nav { position: relative; }
   }
+  .hero-copy { position: relative; z-index: 2; margin-top: auto; padding-bottom: clamp(56px, 9vh, 96px); }
+  .hero-copy .hand { font-size: clamp(30px, 3.4vw, 40px); color: #f4d29a; display: block; transform: rotate(-2deg); transform-origin: left; margin-bottom: 6px; }
+  .hero h1 { font-size: clamp(48px, 7.6vw, 104px); font-weight: 400; max-width: 11.5em; text-shadow: 0 2px 30px rgba(0,0,0,.25); }
+  .hero h1 em { font-style: italic; color: #f4d29a; }
+  .hero .lede { max-width: 33em; font-size: 19px; margin: 22px 0 32px; color: rgba(248,242,231,.92); }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero .credit-tag { position: absolute; right: 24px; bottom: 18px; z-index: 2; font-family: var(--sans); font-size: 11px; letter-spacing: .08em; color: rgba(248,242,231,.6); }
 
-  /* ---------- Hero ---------- */
-  .hero { position: relative; padding: 40px 0 110px; overflow: hidden; }
-  .hero::before {
-    content: ""; position: absolute; width: 760px; height: 760px; right: -220px; top: -260px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(243,211,155,.85) 0%, rgba(243,211,155,.35) 45%, rgba(251,245,234,0) 70%);
-    pointer-events: none;
-  }
-  .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; }
-  .hero h1 { font-size: clamp(46px, 7vw, 88px); font-weight: 400; letter-spacing: -.01em; margin: 18px 0 26px; }
-  .hero h1 em { font-style: italic; color: var(--rouge); }
-  .hero .lede { font-size: 19px; color: var(--ink-soft); max-width: 34em; }
-  .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-  .bonjour { font-family: var(--script); font-size: 34px; color: var(--sage); line-height: 1; }
+  section { padding: 120px 0; }
+  @media (max-width: 700px) { section { padding: 80px 0; } }
 
-  .cover-stage { position: relative; display: grid; place-items: center; padding: 20px 0; }
-  .sun { position: absolute; width: 300px; top: -10px; right: 0; opacity: .9; animation: turn 80s linear infinite; }
-  @keyframes turn { to { transform: rotate(360deg); } }
-  @media (prefers-reduced-motion: reduce) { .sun { animation: none; } }
-  .book {
-    position: relative; width: min(320px, 78vw); aspect-ratio: 2 / 3;
-    border-radius: 3px 10px 10px 3px;
-    background: linear-gradient(180deg, #f8efdf 0%, #f3e4c9 100%);
-    box-shadow:
-      inset 8px 0 10px -6px rgba(0,0,0,.25),
-      inset 0 0 0 1px rgba(0,0,0,.05),
-      22px 30px 50px -18px rgba(70, 40, 20, .45),
-      4px 6px 12px rgba(70, 40, 20, .18);
+  /* ---------- Letter ---------- */
+  .letter-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 80px; align-items: center; }
+  .polaroid {
+    position: relative; background: #fffdf8; padding: 16px 16px 70px; width: min(400px, 100%); margin: 0 auto;
+    box-shadow: 0 30px 50px -28px rgba(60,35,15,.55), 0 2px 6px rgba(60,35,15,.12);
     transform: rotate(-3deg);
-    overflow: hidden;
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: 0 26px 26px;
   }
-  .book .stripe { width: calc(100% + 52px); height: 36px; background: repeating-linear-gradient(90deg, var(--rouge) 0 22px, #f8efdf 22px 44px); }
-  .book .scal { width: calc(100% + 52px); height: 10px; background: radial-gradient(circle at 11px 0, var(--rouge) 10px, transparent 11px) 0 0 / 44px 10px repeat-x; margin-bottom: 18px; }
-  .book .kicker { font-family: var(--sans); font-size: 9.5px; letter-spacing: .32em; text-transform: uppercase; color: var(--ink-soft); }
-  .book .title { font-family: var(--serif); font-size: 44px; line-height: .95; margin: 12px 0 6px; color: var(--navy); }
-  .book .title i { font-family: var(--script); font-style: normal; font-size: 46px; color: var(--rouge); display: block; margin-top: 4px; }
-  .book .sub { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--ink-soft); line-height: 1.3; }
-  .book .art { flex: 1; width: 100%; display: grid; place-items: end center; margin-top: 8px; }
-  .book .art svg { width: 70%; height: auto; }
-  .book .author { font-family: var(--sans); font-size: 12px; letter-spacing: .34em; text-transform: uppercase; color: var(--navy); margin-top: 14px; }
-  .badge {
-    position: absolute; left: 6%; bottom: 8%; width: 108px; height: 108px; border-radius: 50%;
-    background: var(--navy); color: var(--cream); display: grid; place-items: center; text-align: center;
-    font-family: var(--sans); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; line-height: 1.5;
-    transform: rotate(-12deg); box-shadow: 0 12px 24px -10px rgba(47,62,92,.6);
-    outline: 1.5px dashed rgba(251,245,234,.55); outline-offset: -8px;
-  }
-  .badge b { display: block; font-family: var(--script); text-transform: none; letter-spacing: 0; font-size: 24px; font-weight: 400; color: var(--sun-soft); }
+  .polaroid .photo { aspect-ratio: 4 / 5; }
+  .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font-family: var(--hand); font-size: 28px; color: var(--ink-soft); }
+  .tape { position: absolute; width: 120px; height: 34px; background: rgba(233,214,170,.75); top: -16px; left: 50%; transform: translateX(-50%) rotate(-4deg); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+  .polaroid.second { position: absolute; width: 190px; padding: 10px 10px 40px; right: -34px; top: -46px; transform: rotate(7deg); }
+  .polaroid.second figcaption { font-size: 20px; bottom: 8px; }
+  .polaroid.second .photo { aspect-ratio: 1; }
+  .polaroid-stack { position: relative; }
+  @media (max-width: 900px) { .polaroid.second { right: -6px; top: -40px; width: 140px; } }
 
+  .letter { position: relative; }
+  .letter .salutation { font-family: var(--hand); font-size: 40px; color: var(--terracotta); line-height: 1; margin-bottom: 18px; display: block; }
+  .letter p { font-size: 18.5px; }
+  .letter .first { font-family: var(--serif); font-size: clamp(25px, 2.6vw, 31px); line-height: 1.35; font-style: italic; color: var(--ink); }
+  .signoff { margin-top: 28px; display: flex; align-items: flex-end; gap: 18px; }
+  .signoff .xo { font-family: var(--hand); font-size: 28px; color: var(--ink-soft); }
+  .signoff .sig { font-family: var(--sign); font-size: 72px; line-height: .7; color: var(--terracotta-deep); }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; padding: 0; list-style: none; }
+  .facts li { font-family: var(--sans); font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-soft); }
+  @media (max-width: 900px) { .letter-grid { grid-template-columns: 1fr; gap: 90px; } }
+
+  /* ---------- Book ---------- */
+  .book-section { background: var(--paper) var(--grain); }
+  .book-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: center; }
+  .cover-wrap { position: relative; display: grid; place-items: center; }
+  .cover {
+    position: relative; width: min(340px, 80vw); aspect-ratio: 2 / 3; border-radius: 2px 8px 8px 2px; overflow: hidden;
+    box-shadow: inset 7px 0 10px -6px rgba(0,0,0,.35), 26px 34px 60px -24px rgba(60,35,15,.6), 4px 6px 14px rgba(60,35,15,.2);
+    transform: rotate(-2deg); background: #3a2c22;
+  }
+  .cover > img.real { width: 100%; height: 100%; object-fit: cover; }
+  .cover .mock { display: none; position: absolute; inset: 0; color: var(--cream); text-align: center; flex-direction: column; justify-content: space-between; padding: 34px 26px 30px; }
+  .cover.is-mock .mock { display: flex; }
+  .cover .mock .photo { position: absolute; inset: 0; z-index: -1; }
+  .cover .mock .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(25,15,8,.65) 0%, rgba(25,15,8,.1) 40%, rgba(25,15,8,.15) 60%, rgba(25,15,8,.7) 100%); }
+  .cover .mock .k { font-family: var(--sans); font-size: 10px; letter-spacing: .34em; text-transform: uppercase; opacity: .9; }
+  .cover .mock .t { font-family: var(--serif); font-size: 48px; line-height: .95; margin-top: 10px; }
+  .cover .mock .t i { display: block; font-size: 50px; color: #f4d29a; }
+  .cover .mock .s { font-family: var(--serif); font-style: italic; font-size: 17px; margin-top: 10px; opacity: .95; }
+  .cover .mock .a { font-family: var(--sans); font-size: 12px; letter-spacing: .36em; text-transform: uppercase; }
+  .cover-note { position: absolute; right: 2%; top: 4%; font-family: var(--hand); font-size: 26px; color: var(--terracotta); transform: rotate(8deg); text-align: center; line-height: 1; }
+  .cover-note::after { content: "↙"; display: block; font-size: 30px; }
+
+  .pull { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 3vw, 36px); line-height: 1.3; margin: 26px 0 30px; padding-left: 26px; border-left: 2px solid var(--honey); }
+  .pull cite { display: block; margin-top: 12px; font-family: var(--sans); font-style: normal; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--terracotta); }
+  .home-q { font-family: var(--hand); font-size: 34px; color: var(--olive); line-height: 1.2; margin: 6px 0 30px; }
+  .book-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  @media (max-width: 900px) { .book-grid { grid-template-columns: 1fr; gap: 60px; } .cover-note { right: 0; } }
+
+  /* ---------- Postcards ---------- */
+  .head-center { text-align: center; max-width: 680px; margin: 0 auto 70px; }
+  .head-center .hand { display: block; font-size: 34px; color: var(--terracotta); line-height: 1; margin-bottom: 8px; }
+  .head-center p { color: var(--ink-soft); margin-top: 18px; }
+  .postcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; align-items: start; }
+  .postcard {
+    background: #fffdf8; padding: 12px 12px 22px; position: relative;
+    box-shadow: 0 26px 44px -26px rgba(60,35,15,.55), 0 2px 5px rgba(60,35,15,.1);
+    transition: transform .4s ease;
+  }
+  .postcard:nth-child(1) { transform: rotate(-2.2deg); }
+  .postcard:nth-child(2) { transform: rotate(1.6deg) translateY(30px); }
+  .postcard:nth-child(3) { transform: rotate(-1deg); }
+  .postcard:hover { transform: rotate(0) translateY(-8px); }
+  .postcard .photo { aspect-ratio: 4 / 5; }
+  .postcard .place { position: absolute; left: 26px; top: 24px; font-family: var(--serif); font-size: 46px; color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.35); line-height: 1; }
+  .postcard .stamp {
+    position: absolute; right: 24px; top: 24px; width: 64px; height: 64px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.85); color: #fff; display: grid; place-items: center; text-align: center;
+    font-family: var(--sans); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; line-height: 1.3; transform: rotate(14deg);
+  }
+  .postcard .note { font-family: var(--hand); font-size: 25px; line-height: 1.25; padding: 18px 10px 0; color: var(--ink); }
   @media (max-width: 900px) {
-    .hero { padding: 20px 0 80px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .cover-stage { order: -1; }
-    .sun { width: 230px; right: 50%; margin-right: -200px; }
+    .postcards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 48px; }
+    .postcard:nth-child(2) { transform: rotate(1.6deg); }
   }
 
-  /* ---------- Marquee ---------- */
-  .marquee { background: var(--navy); color: var(--cream); overflow: hidden; padding: 18px 0; }
-  .marquee .track { display: flex; gap: 48px; width: max-content; animation: slide 46s linear infinite; }
-  .marquee span { font-family: var(--serif); font-style: italic; font-size: 24px; white-space: nowrap; display: inline-flex; align-items: center; gap: 48px; }
-  .marquee span::after { content: "✦"; font-style: normal; font-size: 13px; color: var(--sun); }
-  @keyframes slide { to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .marquee .track { animation: none; } }
-
-  section { padding: 110px 0; }
-  @media (max-width: 700px) { section { padding: 76px 0; } }
-  .section-head { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-  .section-head .script { font-size: 32px; display: block; margin-bottom: 6px; }
-  .section-head p { color: var(--ink-soft); margin-top: 18px; }
-
-  /* ---------- The Book ---------- */
-  .book-section { background: var(--paper); position: relative; }
-  .book-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
-  .book-quote {
-    font-family: var(--serif); font-style: italic; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.25; color: var(--navy);
-    border-left: 2px solid var(--sun); padding-left: 28px; margin: 0;
+  /* ---------- Favorite things ---------- */
+  .favorites { background: var(--paper) var(--grain); }
+  .collage { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 18px; }
+  .collage figure { margin: 0; position: relative; border-radius: 4px; overflow: hidden; }
+  .collage figure .photo { position: absolute; inset: 0; transition: transform 1.2s ease; }
+  .collage figure:hover .photo { transform: scale(1.04); }
+  .collage figure:first-child { grid-row: span 2; }
+  .collage figure:nth-child(4) { grid-column: span 2; }
+  .collage figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 50px 22px 16px; color: #fff;
+    font-family: var(--hand); font-size: 27px; line-height: 1.15;
+    background: linear-gradient(180deg, rgba(20,12,6,0), rgba(20,12,6,.65));
   }
-  .book-quote cite { display: block; margin-top: 18px; font-family: var(--sans); font-style: normal; font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--rouge); }
-  .book-copy p:first-child::first-letter {
-    font-family: var(--serif); float: left; font-size: 78px; line-height: .8; padding: 8px 12px 0 0; color: var(--rouge);
-  }
-  .question {
-    margin-top: 34px; padding: 30px 34px; background: var(--cream); border-radius: 4px; position: relative;
-    border: 1px solid var(--rule);
-  }
-  .question .script { font-size: 30px; display: block; line-height: 1; margin-bottom: 10px; }
-  .question p { margin: 0; font-family: var(--serif); font-size: 23px; line-height: 1.35; }
-  @media (max-width: 900px) { .book-grid { grid-template-columns: 1fr; gap: 44px; } }
-
-  /* ---------- Stamps / route ---------- */
-  .route { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 80px; }
-  .stamp {
-    position: relative; padding: 12px;
-    background: radial-gradient(circle, transparent 6px, var(--cream) 6.5px) -10px -10px / 20px 20px;
-    filter: drop-shadow(0 6px 10px rgba(70,40,20,.14));
-    transition: transform .35s;
-  }
-  .stamp:nth-child(1) { transform: rotate(-2deg); }
-  .stamp:nth-child(2) { transform: rotate(1.4deg) translateY(14px); }
-  .stamp:nth-child(3) { transform: rotate(-1deg); }
-  .stamp:hover { transform: rotate(0) translateY(-6px); }
-  .stamp-inner { background: var(--cream); border: 1.5px solid var(--rule); padding: 0 0 22px; height: 100%; }
-  .stamp-art { height: 170px; display: grid; place-items: center; position: relative; overflow: hidden; }
-  .stamp-art svg { height: 140px; width: auto; position: relative; }
-  .stamp.fr .stamp-art { background: linear-gradient(180deg, #f6d9a8, #f0c38a); }
-  .stamp.it .stamp-art { background: linear-gradient(180deg, #f3c9a4, #e7a77f); }
-  .stamp.at .stamp-art { background: linear-gradient(180deg, #d9e0cf, #b8c4a6); }
-  .stamp-body { padding: 20px 22px 0; }
-  .stamp-body .eyebrow { font-size: 11px; }
-  .stamp-body h3 { margin: 6px 0 10px; font-size: 30px; }
-  .stamp-body p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
-  .stamp .value { position: absolute; top: 28px; right: 28px; font-family: var(--serif); font-size: 22px; color: var(--navy); background: rgba(251,245,234,.8); border-radius: 999px; padding: 0 12px; }
   @media (max-width: 900px) {
-    .route { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-    .stamp:nth-child(2) { transform: rotate(1.4deg); }
+    .collage { grid-template-columns: 1fr 1fr; grid-template-rows: 340px 220px 220px; }
+    .collage figure:first-child { grid-row: auto; grid-column: span 2; }
+    .collage figure:nth-child(4) { grid-column: span 2; }
   }
+  @media (max-width: 520px) {
+    .collage { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 260px; }
+    .collage figure:first-child, .collage figure:nth-child(4) { grid-column: auto; }
+  }
+
+  .shop { margin-top: 90px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+  .shop h3 { font-size: 38px; margin: 10px 0 16px; }
+  .shop p { color: var(--ink-soft); }
+  .shop-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .shop-list a { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; padding: 22px 4px; border-bottom: 1px solid var(--rule); text-decoration: none; transition: background .25s, padding .25s; }
+  .shop-list a:hover { background: rgba(255,253,248,.6); padding-left: 14px; }
+  .shop-list b { font-family: var(--serif); font-weight: 500; font-size: 25px; line-height: 1.2; }
+  .shop-list span { grid-column: 1; font-size: 15.5px; color: var(--ink-soft); }
+  .shop-list em { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-style: normal; font-family: var(--sans); font-size: 13px; letter-spacing: .14em; color: var(--terracotta); white-space: nowrap; }
+  @media (max-width: 900px) { .shop { grid-template-columns: 1fr; gap: 30px; } }
 
   /* ---------- Free guide ---------- */
-  .guide { position: relative; }
-  .guide-card {
-    position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-    background: var(--navy); color: var(--cream); border-radius: 6px; overflow: hidden;
-  }
-  .guide-art { position: relative; background: linear-gradient(180deg, #f3d39b 0%, #e9a865 60%, #c96f4d 100%); min-height: 380px; display: grid; place-items: end center; overflow: hidden; }
-  .guide-art svg { width: 100%; height: 100%; position: absolute; inset: 0; }
-  .guide-body { padding: 64px 56px; }
-  .guide-body .eyebrow { color: var(--sun); }
-  .guide-body h2 { margin: 14px 0 18px; color: var(--cream); }
-  .guide-body h2 em { color: var(--sun-soft); }
-  .guide-body p { color: rgba(251,245,234,.78); }
-  .signup { margin-top: 26px; }
-  .signup .btn { background: var(--sun); border-color: var(--sun); color: var(--navy); }
-  .signup .btn:hover { background: var(--sun-soft); border-color: var(--sun-soft); }
-  .fine { font-size: 13px; margin-top: 14px; color: rgba(251,245,234,.55) !important; }
-  @media (max-width: 900px) {
-    .guide-card { grid-template-columns: 1fr; }
-    .guide-art { min-height: 240px; }
-    .guide-body { padding: 44px 28px; }
-  }
+  .guide { position: relative; padding: 150px 0; color: var(--cream); overflow: hidden; }
+  .guide > .photo { position: absolute; inset: 0; }
+  .guide > .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,16,8,.78) 0%, rgba(26,16,8,.5) 55%, rgba(26,16,8,.2) 100%); }
+  .guide .wrap { position: relative; }
+  .guide-copy { max-width: 560px; }
+  .guide .eyebrow { color: #f4d29a; }
+  .guide h2 { margin: 14px 0 20px; }
+  .guide h2 em { color: #f4d29a; }
+  .guide p { color: rgba(248,242,231,.88); font-size: 18.5px; }
+  .guide .hand { display: block; font-size: 28px; color: #f4d29a; margin-top: 22px; transform: rotate(-1.5deg); transform-origin: left; }
 
-  /* ---------- Simple pleasures ---------- */
-  .pleasures { background: var(--paper); }
-  .shelf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
-  .ebook {
-    background: var(--cream); border: 1px solid var(--rule); border-radius: 4px; padding: 26px 24px 24px;
-    display: flex; flex-direction: column; text-decoration: none; transition: transform .3s, box-shadow .3s;
-  }
-  .ebook:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -24px rgba(70,40,20,.4); }
-  .ebook .mini {
-    aspect-ratio: 4 / 5; border-radius: 2px; margin-bottom: 22px; display: grid; place-items: center; text-align: center; padding: 18px;
-    box-shadow: inset 6px 0 8px -6px rgba(0,0,0,.2);
-  }
-  .ebook .mini span { font-family: var(--script); font-size: 38px; line-height: 1; color: var(--cream); text-shadow: 0 1px 0 rgba(0,0,0,.08); }
-  .ebook .mini small { display: block; margin-top: 10px; font-family: var(--sans); font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: rgba(251,245,234,.9); }
-  .ebook h3 { font-size: 22px; line-height: 1.2; }
-  .ebook p { font-size: 15px; color: var(--ink-soft); margin: 10px 0 18px; flex: 1; }
-  .ebook .price { font-family: var(--sans); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--rouge); display: flex; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 14px; }
-  .m-spring { background: linear-gradient(160deg, #9fae86, #7d8b6a); }
-  .m-summer { background: linear-gradient(160deg, #eab25a, #d98d3d); }
-  .m-autumn { background: linear-gradient(160deg, #c46a4b, #a24936); }
-  .m-date { background: linear-gradient(160deg, #42557a, #2f3e5c); }
-  @media (max-width: 1000px) { .shelf { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .shelf { grid-template-columns: 1fr; } }
-
-  /* ---------- About ---------- */
-  .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: center; }
-  .portrait {
-    position: relative; aspect-ratio: 4 / 5; border-radius: 200px 200px 6px 6px; overflow: hidden;
-    background: linear-gradient(180deg, #f3d39b 0%, #efc08a 55%, #e3a46d 100%);
-    display: grid; place-items: end center;
-  }
-  .portrait svg { width: 100%; height: auto; }
-  .portrait-note { position: absolute; left: 0; right: 0; bottom: 22px; text-align: center; font-family: var(--script); font-size: 30px; color: var(--navy); }
-  .typewriter-line {
-    font-family: var(--serif); font-size: clamp(26px, 3vw, 34px); line-height: 1.3; font-style: italic; color: var(--navy); margin: 18px 0 28px;
-  }
-  .facts { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; }
-  .facts li { padding: 14px 0; border-top: 1px solid var(--rule); display: flex; gap: 14px; align-items: baseline; }
-  .facts b { font-family: var(--serif); font-size: 30px; font-weight: 500; color: var(--rouge); min-width: 54px; }
-  .facts span { font-size: 15.5px; color: var(--ink-soft); }
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 44px; }
-    .portrait { max-width: 360px; margin: 0 auto; width: 100%; }
-  }
-  @media (max-width: 480px) { .facts { grid-template-columns: 1fr; } }
-
-  /* ---------- Podcast ---------- */
-  .listen { padding: 0 0 110px; }
-  .listen-card {
-    display: flex; align-items: center; gap: 34px; padding: 36px 40px; border-radius: 6px;
-    border: 1.5px solid var(--rule); background: linear-gradient(90deg, rgba(243,211,155,.35), rgba(251,245,234,0));
-  }
-  .listen-card .disc { flex: 0 0 auto; width: 92px; height: 92px; border-radius: 50%; background: repeating-radial-gradient(circle, #2c2f3a 0 2px, #3a3e4c 2px 4px); display: grid; place-items: center; }
-  .listen-card .disc::after { content: ""; width: 30px; height: 30px; border-radius: 50%; background: var(--rouge); box-shadow: 0 0 0 4px var(--sun); }
-  .listen-card h3 { font-size: 28px; margin: 6px 0 6px; }
+  /* ---------- Listen ---------- */
+  .listen { padding: 90px 0 0; }
+  .listen-card { display: grid; grid-template-columns: auto 1fr auto; gap: 30px; align-items: center; padding: 34px 38px; border: 1px solid var(--rule); border-radius: 6px; background: #fffdf8; }
+  .listen-card .mic { width: 74px; height: 74px; border-radius: 50%; background: var(--terracotta); display: grid; place-items: center; }
+  .listen-card .mic svg { width: 30px; height: 30px; }
+  .listen-card h3 { font-size: 30px; margin: 4px 0 6px; }
   .listen-card p { margin: 0; color: var(--ink-soft); }
-  .listen-card .btn { margin-left: auto; flex: 0 0 auto; }
-  @media (max-width: 760px) { .listen-card { flex-direction: column; align-items: flex-start; padding: 30px 24px; } .listen-card .btn { margin-left: 0; } }
+  @media (max-width: 760px) { .listen-card { grid-template-columns: 1fr; padding: 28px 24px; } }
 
   /* ---------- Journal ---------- */
-  .journal { background: var(--linen); }
-  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-  .post { text-decoration: none; display: block; background: var(--cream); border-radius: 4px; overflow: hidden; transition: transform .3s; }
-  .post:hover { transform: translateY(-4px); }
-  .post .ph { height: 190px; display: grid; place-items: center; }
-  .post .ph svg { height: 120px; width: auto; }
-  .post .pb { padding: 24px 26px 28px; }
-  .post h3 { font-size: 26px; margin: 8px 0 10px; }
-  .post p { font-size: 15.5px; color: var(--ink-soft); margin: 0 0 14px; }
-  .post .more { font-family: var(--sans); font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--rouge); }
-  .journal .center { text-align: center; margin-top: 50px; }
-  @media (max-width: 900px) { .posts { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+  .post { text-decoration: none; display: block; }
+  .post .photo { aspect-ratio: 4 / 3; border-radius: 4px; }
+  .post .photo img { transition: transform 1.2s ease; }
+  .post:hover .photo img { transform: scale(1.05); }
+  .post .eyebrow { display: block; margin-top: 22px; }
+  .post h3 { font-size: 29px; margin: 8px 0 10px; }
+  .post p { font-size: 16px; color: var(--ink-soft); margin: 0 0 12px; }
+  .post .more { font-family: var(--sans); font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--terracotta); }
+  .center { text-align: center; margin-top: 56px; }
+  @media (max-width: 900px) { .posts { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; gap: 50px; } }
 
   /* ---------- Footer ---------- */
-  footer { background: var(--ink); color: rgba(251,245,234,.8); padding: 90px 0 40px; position: relative; }
+  footer { background: #241e19; color: rgba(248,242,231,.78); padding: 100px 0 40px; }
   .foot-top { text-align: center; }
-  .foot-top .script { font-size: clamp(54px, 9vw, 96px); color: var(--sun-soft); line-height: 1; }
+  .foot-top .hand { font-size: clamp(56px, 9vw, 96px); color: #f4d29a; line-height: 1; display: block; }
   .foot-top p { max-width: 520px; margin: 18px auto 0; }
-  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin: 46px 0; padding: 26px 0; border-top: 1px solid rgba(251,245,234,.14); border-bottom: 1px solid rgba(251,245,234,.14); }
+  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin: 50px 0 36px; padding: 26px 0; border-top: 1px solid rgba(248,242,231,.14); border-bottom: 1px solid rgba(248,242,231,.14); }
   .foot-links a { font-family: var(--sans); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; }
-  .foot-links a:hover { color: var(--sun); }
-  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: rgba(251,245,234,.5); }
+  .foot-links a:hover { color: #f4d29a; }
+  .credits { font-size: 12.5px; color: rgba(248,242,231,.45); text-align: center; max-width: 900px; margin: 0 auto 26px; line-height: 1.7; }
+  .credits a { text-decoration: none; border-bottom: 1px solid rgba(248,242,231,.2); }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: rgba(248,242,231,.5); }
 
-  /* reveal */
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
   .reveal.in { opacity: 1; transform: none; }
+  .postcard.reveal.in:nth-child(1) { transform: rotate(-2.2deg); }
+  .postcard.reveal.in:nth-child(2) { transform: rotate(1.6deg) translateY(30px); }
+  .postcard.reveal.in:nth-child(3) { transform: rotate(-1deg); }
+  .postcard.reveal.in:hover { transform: rotate(0) translateY(-8px); }
+  @media (max-width: 900px) { .postcard.reveal.in:nth-child(2) { transform: rotate(1.6deg); } }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 </style>
 </head>
 <body>
 
-<div class="awning" aria-hidden="true"></div>
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="photo">
+    <img src="https://unsplash.com/photos/xjflfu9tdh4/download?force=true&w=2400" alt="Paris rooftops at golden hour, with the Eiffel Tower in the distance">
+  </div>
 
-<header class="site">
   <nav class="nav wrap" aria-label="Main">
-    <a class="brand" href="#top">
-      <span class="name">Debbie Spence</span>
-      <span class="tag">Award-Winning Author</span>
-    </a>
+    <a class="brand" href="#top">Debbie Spence<small>Author</small></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
     <ul id="menu">
+      <li><a href="#hello">Hello</a></li>
       <li><a href="#book">The Book</a></li>
-      <li><a href="#journey">The Journey</a></li>
-      <li><a href="#pleasures">Simple Pleasures</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#postcards">The Journey</a></li>
+      <li><a href="#favorites">Simple Pleasures</a></li>
       <li><a href="#journal">Journal</a></li>
     </ul>
   </nav>
-</header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <span class="bonjour">Bonjour, friend</span>
-        <h1>Stories with fun, <em>hope</em> &amp; adventure.</h1>
-        <p class="lede">I’m Debbie Spence, a multiple award-winning author, mom of five, and a hardcore Francophile and Italophile. My new travel memoir follows a frazzled mom across France, Italy and Austria, looking for what “home” really means.</p>
-        <div class="actions">
-          <a class="btn" href="https://www.debbiespence.com/my-new-book-is-here/">Get <i>Searching for Home</i></a>
-          <a class="btn ghost" href="#guide">Free travel e-book</a>
-        </div>
-      </div>
-
-      <div class="cover-stage reveal">
-        <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">
-          <g fill="none" stroke="#e2a443" stroke-width="1.4" stroke-linecap="round" opacity=".7">
-            <circle cx="100" cy="100" r="44" fill="#f3d39b" stroke="none"/>
-            <g id="rays">
-              <line x1="100" y1="6" x2="100" y2="40"/><line x1="100" y1="160" x2="100" y2="194"/>
-              <line x1="6" y1="100" x2="40" y2="100"/><line x1="160" y1="100" x2="194" y2="100"/>
-              <line x1="33" y1="33" x2="57" y2="57"/><line x1="143" y1="143" x2="167" y2="167"/>
-              <line x1="167" y1="33" x2="143" y2="57"/><line x1="57" y1="143" x2="33" y2="167"/>
-              <line x1="64" y1="13" x2="76" y2="44"/><line x1="124" y1="156" x2="136" y2="187"/>
-              <line x1="13" y1="136" x2="44" y2="124"/><line x1="156" y1="76" x2="187" y2="64"/>
-              <line x1="136" y1="13" x2="124" y2="44"/><line x1="76" y1="156" x2="64" y2="187"/>
-              <line x1="13" y1="64" x2="44" y2="76"/><line x1="156" y1="124" x2="187" y2="136"/>
-            </g>
-          </g>
-        </svg>
-
-        <div class="book" role="img" aria-label="Book cover: Searching for Home – The European Journey of a Frazzled Mom, by Debbie Spence">
-          <div class="stripe"></div>
-          <div class="scal"></div>
-          <div class="kicker">A Travel Memoir</div>
-          <div class="title">Searching<i>for Home</i></div>
-          <div class="sub">The European Journey<br>of a Frazzled Mom</div>
-          <div class="art">
-            <svg viewBox="0 0 160 120" aria-hidden="true">
-              <circle cx="118" cy="40" r="20" fill="#f3d39b"/>
-              <path d="M0 108 Q40 92 80 104 T160 100 V120 H0Z" fill="#c9d1b6"/>
-              <!-- Eiffel tower -->
-              <g fill="none" stroke="#2f3e5c" stroke-width="1.6" stroke-linejoin="round">
-                <path d="M62 112 L73 62 L74 30 L76 10 L78 30 L79 62 L90 112"/>
-                <path d="M67 112 Q76 96 85 112"/>
-                <line x1="69" y1="88" x2="83" y2="88"/>
-                <line x1="72" y1="62" x2="80" y2="62"/>
-                <line x1="73.5" y1="44" x2="78.5" y2="44"/>
-                <path d="M70 88 L76 66 L82 88 M73 62 L76 50 L79 62"/>
-              </g>
-              <!-- cypress trees -->
-              <path d="M26 110 Q22 90 28 72 Q34 90 30 110Z" fill="#7d8b6a"/>
-              <path d="M38 110 Q35 96 40 84 Q45 96 42 110Z" fill="#7d8b6a" opacity=".8"/>
-              <!-- alps -->
-              <path d="M104 108 L124 78 L134 90 L142 80 L160 106Z" fill="#a9b6c9"/>
-              <path d="M119 85 L124 78 L128 83 L124 86Z" fill="#fbf5ea"/>
-            </svg>
-          </div>
-          <div class="author">Debbie Spence</div>
-        </div>
-
-        <div class="badge"><div><b>Now</b>available</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Café au lait at sunrise</span><span>Sunflowers along the road</span><span>Gelato in the piazza</span><span>A new chapter in a little notebook</span><span>Strudel and an Alpine view</span><span>Long, golden afternoons</span><span>Fresh bread from the boulangerie</span>
-      <span>Café au lait at sunrise</span><span>Sunflowers along the road</span><span>Gelato in the piazza</span><span>A new chapter in a little notebook</span><span>Strudel and an Alpine view</span><span>Long, golden afternoons</span><span>Fresh bread from the boulangerie</span>
+  <div class="hero-copy wrap">
+    <span class="hand">Bonjour, I’m Debbie.</span>
+    <h1>Stories with fun, <em>hope</em> &amp; adventure.</h1>
+    <p class="lede">I write award-winning books for children, encouragement for women, and now a travel memoir about a frazzled mom of five, a long road through France, Italy and Austria, and what “home” really means.</p>
+    <div class="actions">
+      <a class="btn light" href="#book">Meet <i>Searching for Home</i></a>
+      <a class="btn outline-light" href="#hello">Read my letter</a>
     </div>
   </div>
+</header>
 
-  <!-- THE BOOK -->
-  <section class="book-section" id="book">
-    <div class="wrap">
-      <div class="book-grid">
-        <div class="reveal">
-          <span class="eyebrow">The New Memoir</span>
-          <h2 style="margin:14px 0 34px">Searching for Home</h2>
-          <blockquote class="book-quote">
-            “A busy mom of five packed up our chaos-filled American life and took part of my crew to Europe in search of that elusive ‘home’ feeling.”
-            <cite>Debbie Spence</cite>
-          </blockquote>
+<main>
+
+  <!-- ============ LETTER ============ -->
+  <section id="hello">
+    <div class="wrap letter-grid">
+      <div class="polaroid-stack reveal">
+        <figure class="polaroid">
+          <span class="tape" aria-hidden="true"></span>
+          <div class="photo">
+            <img src="img/debbie.jpg" alt="Debbie Spence"
+                 onerror="this.onerror=null;this.alt='A notebook, pen, reading glasses and a cup of coffee';this.src='https://unsplash.com/photos/Z5JJifMtbCo/download?force=true&w=900'">
+          </div>
+          <figcaption>at my writing desk</figcaption>
+        </figure>
+        <figure class="polaroid second" aria-hidden="true">
+          <div class="photo">
+            <img src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=600" alt="">
+          </div>
+          <figcaption>always the croissant</figcaption>
+        </figure>
+      </div>
+
+      <div class="letter reveal">
+        <span class="salutation">Dear friend,</span>
+        <p class="first">I began my writing career in 1972, when John Boy Walton scribbled in his Big Chief writing tablet. I was about eleven, and I’ve been filling notebooks ever since.</p>
+        <p>Along the way I raised five children, spent 24 years homeschooling, and wrote children’s books about hope and faith that, to my delight, have won a few awards. I’ve been blogging for over ten years. These days the nest is empty, there are three grandchildren to spoil, and there is finally a little time to chase the places I love.</p>
+        <p>I’m a hardcore Francophile and Italophile. Give me a sunny café table, something warm from the bakery, and a story to tell. So I packed up our chaos-filled American life, took part of my crew to Europe, and went searching for that elusive “home” feeling. That journey became my new book.</p>
+        <p>I’m so glad you’re here. Pull up a chair and stay a while.</p>
+        <div class="signoff">
+          <span class="xo">xo,</span>
+          <span class="sig">Debbie</span>
         </div>
-        <div class="book-copy reveal">
-          <p><i>Searching for Home – The European Journey of a Frazzled Mom</i> is a travel memoir about one family’s journey through France, Italy and Austria, and the meaning of home they found along the way.</p>
-          <p>Each chapter blends personal stories with destination details, travel tips, and fascinating historical insights. It is a book to read with a café crème in hand, or tuck into your carry-on for the trip you have been dreaming about.</p>
-          <p>Along the way there are sunlit squares, long lunches and plenty of family chaos, and every road leads back to one question.</p>
-          <div class="question">
-            <span class="script">la question</span>
-            <p>What does “home” really mean?</p>
-          </div>
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:14px">
-            <a class="btn" href="https://www.debbiespence.com/my-new-book-is-here/">Order the book</a>
-            <a class="btn ghost" href="https://www.debbiespence.com/join-my-search-for-home/">Join my search for home</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ROUTE -->
-      <div id="journey" class="route">
-        <article class="stamp fr reveal">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <span class="value">Fr</span>
-              <svg viewBox="0 0 100 120" aria-hidden="true">
-                <circle cx="72" cy="30" r="16" fill="#fbf5ea" opacity=".7"/>
-                <g fill="none" stroke="#2f3e5c" stroke-width="2.2" stroke-linejoin="round">
-                  <path d="M28 116 L44 60 L46 26 L50 4 L54 26 L56 60 L72 116"/>
-                  <path d="M36 116 Q50 92 64 116"/>
-                  <line x1="38" y1="86" x2="62" y2="86"/>
-                  <line x1="43" y1="60" x2="57" y2="60"/>
-                  <line x1="45.5" y1="40" x2="54.5" y2="40"/>
-                  <path d="M40 86 L50 64 L60 86 M44 60 L50 46 L56 60"/>
-                </g>
-              </svg>
-            </div>
-            <div class="stamp-body">
-              <span class="eyebrow">France</span>
-              <h3>Paris &amp; the countryside</h3>
-              <p>Boulangeries at dawn, café tables on the sidewalk, and lavender light over the hills. This is where the Francophile in me feels most at home.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="stamp it reveal">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <span class="value">It</span>
-              <svg viewBox="0 0 120 120" aria-hidden="true">
-                <circle cx="88" cy="28" r="15" fill="#fbf5ea" opacity=".7"/>
-                <path d="M0 96 Q30 74 60 86 T120 80 V120 H0Z" fill="#a8b48f"/>
-                <path d="M0 106 Q40 92 80 102 T120 98 V120 H0Z" fill="#7d8b6a"/>
-                <path d="M24 98 Q19 72 26 46 Q33 72 28 98Z" fill="#4f5d43"/>
-                <path d="M38 96 Q34 76 40 58 Q46 76 42 96Z" fill="#4f5d43"/>
-                <rect x="64" y="66" width="22" height="22" fill="#f5ecdc"/>
-                <path d="M62 66 L75 56 L88 66Z" fill="#b4473a"/>
-                <rect x="72" y="76" width="6" height="12" fill="#8e3329"/>
-              </svg>
-            </div>
-            <div class="stamp-body">
-              <span class="eyebrow">Italy</span>
-              <h3>Cypress roads &amp; piazzas</h3>
-              <p>Warm stone villages, unhurried suppers and gelato as the sun goes down. Here the Italophile takes over.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="stamp at reveal">
-          <div class="stamp-inner">
-            <div class="stamp-art">
-              <span class="value">At</span>
-              <svg viewBox="0 0 120 120" aria-hidden="true">
-                <circle cx="30" cy="30" r="13" fill="#fbf5ea" opacity=".7"/>
-                <path d="M0 100 L34 50 L50 70 L72 36 L120 100Z" fill="#6f7f96"/>
-                <path d="M64 48 L72 36 L80 47 L74 52 L70 49Z" fill="#fbf5ea"/>
-                <path d="M28 59 L34 50 L39 57 L34 60Z" fill="#fbf5ea"/>
-                <path d="M0 108 Q40 92 80 102 T120 96 V120 H0Z" fill="#7d8b6a"/>
-                <rect x="82" y="84" width="18" height="16" fill="#f5ecdc"/>
-                <path d="M79 85 L91 74 L103 85Z" fill="#5a4636"/>
-              </svg>
-            </div>
-            <div class="stamp-body">
-              <span class="eyebrow">Austria</span>
-              <h3>Alpine air &amp; old music</h3>
-              <p>Mountain meadows, coffeehouse cake and grand old streets. A softer, cooler kind of beauty at the far end of the road.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE GUIDE -->
-  <section class="guide" id="guide">
-    <div class="wrap">
-      <div class="guide-card reveal">
-        <div class="guide-art" aria-hidden="true">
-          <svg viewBox="0 0 400 380" preserveAspectRatio="xMidYMax slice">
-            <circle cx="290" cy="120" r="56" fill="#fbe7bf"/>
-            <path d="M0 270 Q100 230 200 255 T400 245 V380 H0Z" fill="#d48a5a" opacity=".55"/>
-            <!-- café table -->
-            <ellipse cx="200" cy="300" rx="120" ry="18" fill="#fbf5ea"/>
-            <rect x="196" y="300" width="8" height="70" fill="#2c2f3a"/>
-            <rect x="160" y="366" width="80" height="6" rx="3" fill="#2c2f3a"/>
-            <!-- cup -->
-            <path d="M150 268 h46 v14 a23 16 0 0 1 -46 0z" fill="#fbf5ea" stroke="#2f3e5c" stroke-width="2.5"/>
-            <path d="M196 272 q14 0 12 12 q-2 8 -14 6" fill="none" stroke="#2f3e5c" stroke-width="2.5"/>
-            <ellipse cx="173" cy="268" rx="23" ry="4" fill="#8a5a3c"/>
-            <ellipse cx="172" cy="298" rx="36" ry="5" fill="#f0dfc3"/>
-            <path d="M164 254 q-6 -10 2 -18 q6 -8 0 -16" fill="none" stroke="#fbf5ea" stroke-width="2" opacity=".8"/>
-            <path d="M178 252 q-6 -10 2 -18 q6 -8 0 -16" fill="none" stroke="#fbf5ea" stroke-width="2" opacity=".6"/>
-            <!-- croissant -->
-            <g transform="translate(232 270)">
-              <path d="M0 18 Q4 0 26 -2 Q48 0 52 18 Q40 22 26 22 Q12 22 0 18Z" fill="#e2a443" stroke="#a96a2a" stroke-width="2"/>
-              <path d="M14 3 L18 21 M26 -2 L26 22 M38 3 L34 21" stroke="#a96a2a" stroke-width="2" fill="none"/>
-            </g>
-            <!-- notebook -->
-            <g transform="translate(110 284) rotate(-8)">
-              <rect width="58" height="16" rx="2" fill="#b4473a"/>
-              <rect x="4" y="3" width="50" height="2" fill="#fbf5ea" opacity=".7"/>
-            </g>
-          </svg>
-        </div>
-        <div class="guide-body">
-          <span class="eyebrow">A Free E-Book</span>
-          <h2>Planning a <em>French</em> or <em>Italian</em> journey?</h2>
-          <p>Before you pack, let me share what I’ve learned on the road: practical tips, favorite places and the little pleasures that turn a trip into a memory. My free travel e-book is waiting for you.</p>
-          <div class="signup">
-            <a class="btn" href="https://www.debbiespence.com/join-me-on-a-journey/">Get the free e-book</a>
-          </div>
-          <p class="fine">Join me on a journey. No spam, just stories, tips and a little sunshine.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIMPLE PLEASURES -->
-  <section class="pleasures" id="pleasures">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="script">les petits plaisirs</span>
-        <h2>Simple Pleasures</h2>
-        <p>Little e-books for slowing down and savoring ordinary days: the first warm afternoon, a good meal shared, a new idea for date night.</p>
-      </div>
-      <div class="shelf">
-        <a class="ebook reveal" href="https://www.debbiespence.com/shop/">
-          <div class="mini m-spring"><div><span>Spring</span><small>Pleasures</small></div></div>
-          <h3>Spring Pleasures</h3>
-          <p>50 simple pleasures for winter-weary souls.</p>
-          <div class="price"><span>E-Book</span><span>$0.99</span></div>
-        </a>
-        <a class="ebook reveal" href="https://www.debbiespence.com/product/2030/">
-          <div class="mini m-summer"><div><span>Summer</span><small>Simple Pleasures</small></div></div>
-          <h3>Summer</h3>
-          <p>Sunshine, slow mornings and long evenings to enjoy at home or away.</p>
-          <div class="price"><span>E-Book</span><span>$0.99</span></div>
-        </a>
-        <a class="ebook reveal" href="https://www.debbiespence.com/product/2031/">
-          <div class="mini m-autumn"><div><span>Autumn</span><small>Simple Pleasures</small></div></div>
-          <h3>Autumn</h3>
-          <p>Cozy, golden pleasures for the turning of the year.</p>
-          <div class="price"><span>E-Book</span><span>$0.99</span></div>
-        </a>
-        <a class="ebook reveal" href="https://www.debbiespence.com/product/the-ultimate-date-night-idea-list-ebook/">
-          <div class="mini m-date"><div><span>Date Night</span><small>The Ultimate List</small></div></div>
-          <h3>The Ultimate Date Night Idea List</h3>
-          <p>Fresh ideas to bring a little romance back to the week.</p>
-          <div class="price"><span>E-Book</span><span>$0.99</span></div>
-        </a>
-      </div>
-      <div style="text-align:center;margin-top:44px">
-        <a class="btn ghost" href="https://www.debbiespence.com/shop/">Visit the shop</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap about-grid">
-      <div class="portrait reveal" aria-hidden="true">
-        <svg viewBox="0 0 300 375">
-          <circle cx="210" cy="110" r="44" fill="#fbe7bf"/>
-          <path d="M0 300 Q80 270 150 290 T300 280 V375 H0Z" fill="#c98a5e" opacity=".5"/>
-          <!-- desk -->
-          <rect x="20" y="300" width="260" height="10" rx="3" fill="#5a4636"/>
-          <!-- typewriter -->
-          <g transform="translate(70 230)">
-            <rect x="0" y="30" width="140" height="40" rx="10" fill="#2f3e5c"/>
-            <rect x="12" y="14" width="116" height="24" rx="8" fill="#3d4f73"/>
-            <rect x="34" y="-34" width="72" height="52" fill="#fbf5ea"/>
-            <line x1="44" y1="-20" x2="96" y2="-20" stroke="#c9b9a0" stroke-width="2"/>
-            <line x1="44" y1="-10" x2="90" y2="-10" stroke="#c9b9a0" stroke-width="2"/>
-            <line x1="44" y1="0" x2="80" y2="0" stroke="#c9b9a0" stroke-width="2"/>
-            <g fill="#fbf5ea">
-              <circle cx="24" cy="50" r="4"/><circle cx="38" cy="50" r="4"/><circle cx="52" cy="50" r="4"/><circle cx="66" cy="50" r="4"/><circle cx="80" cy="50" r="4"/><circle cx="94" cy="50" r="4"/><circle cx="108" cy="50" r="4"/><circle cx="122" cy="50" r="4"/>
-              <rect x="40" y="58" width="60" height="6" rx="3"/>
-            </g>
-          </g>
-          <!-- flowers -->
-          <rect x="226" y="262" width="20" height="38" rx="4" fill="#fbf5ea"/>
-          <path d="M236 262 L232 232 M236 262 L244 228 M236 262 L236 222" stroke="#7d8b6a" stroke-width="2.5"/>
-          <circle cx="232" cy="230" r="7" fill="#e2a443"/><circle cx="244" cy="226" r="7" fill="#b4473a"/><circle cx="236" cy="219" r="7" fill="#e2a443"/>
-        </svg>
-        <div class="portrait-note">à mon bureau</div>
-      </div>
-
-      <div class="reveal">
-        <span class="eyebrow">About Debbie</span>
-        <h2 style="margin-top:14px">A writer since a <span class="script" style="font-size:1.05em">Big Chief</span> tablet</h2>
-        <p class="typewriter-line">“I began my writing career in 1972 when John Boy Walton scribbled in his Big Chief writing tablet.”</p>
-        <p>I was about eleven years old, and I have been writing ever since. Today I’m a multiple award-winning author of children’s books built on hope and faith, and I write for women who are trying to find a little more joy in their everyday lives. I have been blogging for over ten years.</p>
-        <p>I’m also a mom of five, a 24-year homeschooling veteran, an empty nester and a grandmother. Above all I’m a dedicated Francophile and Italophile. My love of France and Italy is what inspired <i>Searching for Home</i>.</p>
         <ul class="facts">
-          <li><b>1972</b><span>The year the writing began</span></li>
-          <li><b>5</b><span>Children, and a frazzled mom</span></li>
-          <li><b>24</b><span>Years of homeschooling</span></li>
-          <li><b>3</b><span>Countries in the new memoir</span></li>
+          <li>Mom of five</li>
+          <li>24 years homeschooling</li>
+          <li>Grandmother of three</li>
+          <li>Francophile &amp; Italophile</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- PODCAST -->
+  <!-- ============ BOOK ============ -->
+  <section class="book-section" id="book">
+    <div class="wrap book-grid">
+      <div class="cover-wrap reveal">
+        <div class="cover" id="cover">
+          <img class="real" src="img/cover.jpg" alt="Searching for Home book cover"
+               onerror="this.closest('.cover').classList.add('is-mock');this.remove()">
+          <div class="mock" aria-label="Searching for Home – The European Journey of a Frazzled Mom, by Debbie Spence" role="img">
+            <div class="photo"><img src="https://unsplash.com/photos/yyb5HOnHfus/download?force=true&w=900" alt=""></div>
+            <div>
+              <div class="k">A Travel Memoir</div>
+              <div class="t">Searching<i>for Home</i></div>
+              <div class="s">The European Journey of a Frazzled Mom</div>
+            </div>
+            <div class="a">Debbie Spence</div>
+          </div>
+        </div>
+        <div class="cover-note">out now!</div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">My New Memoir</span>
+        <h2 style="margin-top:14px">Searching for Home</h2>
+        <p style="font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-soft);margin-top:8px">The European Journey of a Frazzled Mom</p>
+        <blockquote class="pull">
+          “A busy mom of five packed up our chaos-filled American life and took part of my crew to Europe in search of that elusive ‘home’ feeling.”
+        </blockquote>
+        <p>This is the story of that trip, through France, Italy and Austria. Each chapter blends personal stories with destination details, travel tips, and fascinating historical insights, so you can laugh along with the chaos and plan your own adventure at the same time.</p>
+        <p>Underneath it all is the question I carried the whole way:</p>
+        <p class="home-q">What does “home” really mean?</p>
+        <div class="book-actions">
+          <a class="btn" href="https://www.debbiespence.com/my-new-book-is-here/">Get the book</a>
+          <a class="btn ghost" href="https://www.debbiespence.com/join-my-search-for-home/">Join my search for home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POSTCARDS ============ -->
+  <section id="postcards">
+    <div class="wrap">
+      <div class="head-center reveal">
+        <span class="hand">wish you were here</span>
+        <h2>Postcards from the Road</h2>
+        <p>Three countries, one carful of family, and more long lunches than I can count.</p>
+      </div>
+      <div class="postcards">
+        <article class="postcard reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/c1Jp-fo53U8/download?force=true&w=1000" alt="A lavender field at sunset in the south of France"></div>
+          <span class="place">France</span>
+          <span class="stamp" aria-hidden="true">Par<br>Avion</span>
+          <p class="note">Lavender, sidewalk cafés and fresh bread every morning. My Francophile heart is full.</p>
+        </article>
+        <article class="postcard reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/r9RW20TrQ0Y/download?force=true&w=1000" alt="A cypress-lined road winding through the hills of Tuscany"></div>
+          <span class="place">Italy</span>
+          <span class="stamp" aria-hidden="true">Posta<br>Italiana</span>
+          <p class="note">Cypress roads, golden light and lunches that last all afternoon. Ciao, bella!</p>
+        </article>
+        <article class="postcard reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/XK89IwEo244/download?force=true&w=1000" alt="A lakeside Austrian village and church at sunset"></div>
+          <span class="place">Austria</span>
+          <span class="stamp" aria-hidden="true">Grüß<br>Gott</span>
+          <p class="note">Mountains, still lakes and coffeehouse cake. Where is home, anyway?</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAVORITES + SHOP ============ -->
+  <section class="favorites" id="favorites">
+    <div class="wrap">
+      <div class="head-center reveal">
+        <span class="hand">les petits plaisirs</span>
+        <h2>A Few of My Favorite Things</h2>
+        <p>I believe in simple pleasures: the first sunny afternoon, a meal that lingers, a fresh page and a good pen. Joy is usually closer than we think.</p>
+      </div>
+
+      <div class="collage">
+        <figure class="reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/J3QlDHTHxZE/download?force=true&w=1200" alt="Pasta and a glass of wine on an outdoor table in the Italian sun"></div>
+          <figcaption>Long lunches in the sunshine</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=900" alt="A cappuccino and a croissant on a wooden table"></div>
+          <figcaption>Café crème &amp; a warm croissant</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/Z5JJifMtbCo/download?force=true&w=900" alt="A notebook, pen, reading glasses and coffee"></div>
+          <figcaption>A fresh page &amp; a good pen</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/gp3y7I-RZb0/download?force=true&w=1400" alt="A Paris café corner with tables and chairs under an awning"></div>
+          <figcaption>A sidewalk table &amp; nowhere to be</figcaption>
+        </figure>
+      </div>
+
+      <div class="shop">
+        <div class="reveal">
+          <span class="eyebrow">Little E-Books</span>
+          <h3>Simple pleasures, for $0.99</h3>
+          <p>Small, cheerful e-books for savoring ordinary days, one season at a time.</p>
+          <a class="btn ghost" href="https://www.debbiespence.com/shop/" style="margin-top:8px">Visit the shop</a>
+        </div>
+        <ul class="shop-list reveal">
+          <li><a href="https://www.debbiespence.com/shop/"><b>Spring Pleasures</b><span>50 simple pleasures for winter-weary souls</span><em>$0.99 →</em></a></li>
+          <li><a href="https://www.debbiespence.com/product/2030/"><b>Summer</b><span>Sunshine, slow mornings and long evenings</span><em>$0.99 →</em></a></li>
+          <li><a href="https://www.debbiespence.com/product/2031/"><b>Autumn</b><span>Cozy, golden pleasures for the turning of the year</span><em>$0.99 →</em></a></li>
+          <li><a href="https://www.debbiespence.com/product/the-ultimate-date-night-idea-list-ebook/"><b>The Ultimate Date Night Idea List</b><span>Fresh ideas for a little romance</span><em>$0.99 →</em></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREE GUIDE ============ -->
+  <section class="guide" id="guide">
+    <div class="photo">
+      <img loading="lazy" src="https://unsplash.com/photos/mPU41vaFzKI/download?force=true&w=2400" alt="The Eiffel Tower in golden evening light">
+    </div>
+    <div class="wrap">
+      <div class="guide-copy reveal">
+        <span class="eyebrow">A Free E-Book, From Me to You</span>
+        <h2>Planning a <em>French</em> or <em>Italian</em> journey?</h2>
+        <p>I’ve gathered what I learned on the road into a free e-book for you: tips, favorite places and the little things that turn a trip into a memory.</p>
+        <a class="btn light" href="https://www.debbiespence.com/join-me-on-a-journey/" style="margin-top:10px">Send me the free e-book</a>
+        <span class="hand">Bon voyage, friend!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LISTEN ============ -->
   <div class="listen">
     <div class="wrap">
       <div class="listen-card reveal">
-        <div class="disc" aria-hidden="true"></div>
+        <div class="mic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f8f2e7" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>
+        </div>
         <div>
-          <span class="eyebrow">As heard on</span>
+          <span class="eyebrow">Have a listen</span>
           <h3><i>The Life of a Bon Vivant</i></h3>
-          <p>Debbie joins Mon Petit Four to talk about <i>Searching for Home</i> and her family’s road trip through France and Italy.</p>
+          <p>I joined Mon Petit Four to chat about <i>Searching for Home</i> and our family road trip through France and Italy.</p>
         </div>
         <a class="btn ghost" href="https://www.monpetitfour.com/s3ep48/">Listen</a>
       </div>
     </div>
   </div>
 
-  <!-- JOURNAL -->
-  <section class="journal" id="journal">
+  <!-- ============ JOURNAL ============ -->
+  <section id="journal">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="script">le journal</span>
-        <h2>From the Blog</h2>
+      <div class="head-center reveal">
+        <span class="hand">from my journal</span>
+        <h2>On the Blog</h2>
         <p>Notes on home, travel, family and the simple joys in between.</p>
       </div>
       <div class="posts">
         <a class="post reveal" href="https://www.debbiespence.com/my-new-book-is-here/">
-          <div class="ph" style="background:#f3d39b">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <rect x="22" y="14" width="56" height="76" rx="3" fill="#fbf5ea" stroke="#2f3e5c" stroke-width="2"/>
-              <rect x="22" y="14" width="56" height="10" fill="#b4473a"/>
-              <line x1="32" y1="40" x2="68" y2="40" stroke="#2f3e5c" stroke-width="2"/>
-              <line x1="36" y1="48" x2="64" y2="48" stroke="#c9b9a0" stroke-width="2"/>
-              <circle cx="50" cy="70" r="9" fill="#e2a443"/>
-            </svg>
-          </div>
-          <div class="pb">
-            <span class="eyebrow">News</span>
-            <h3>My New Book is Here</h3>
-            <p><i>Searching for Home – The European Journey of a Frazzled Mom</i> is now available.</p>
-            <span class="more">Read more →</span>
-          </div>
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/yyb5HOnHfus/download?force=true&w=900" alt="A Paris apartment building with wrought-iron balconies"></div>
+          <span class="eyebrow">News</span>
+          <h3>My New Book is Here</h3>
+          <p><i>Searching for Home – The European Journey of a Frazzled Mom</i> is now available.</p>
+          <span class="more">Read more →</span>
         </a>
         <a class="post reveal" href="https://www.debbiespence.com/12-ways-to-enjoy-home-this-summer/">
-          <div class="ph" style="background:#d9e0cf">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="72" cy="28" r="12" fill="#e2a443"/>
-              <path d="M20 86 V52 L48 30 L76 52 V86Z" fill="#fbf5ea" stroke="#2f3e5c" stroke-width="2"/>
-              <rect x="42" y="62" width="12" height="24" fill="#b4473a"/>
-              <rect x="26" y="56" width="10" height="10" fill="#9fae86"/>
-              <rect x="60" y="56" width="10" height="10" fill="#9fae86"/>
-            </svg>
-          </div>
-          <div class="pb">
-            <span class="eyebrow">Home</span>
-            <h3>12 Ways to Enjoy Home this Summer</h3>
-            <p>You don’t need a passport to find a little joie de vivre close to home.</p>
-            <span class="more">Read more →</span>
-          </div>
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=900" alt="A cappuccino and a croissant on a wooden table"></div>
+          <span class="eyebrow">At Home</span>
+          <h3>12 Ways to Enjoy Home this Summer</h3>
+          <p>You don’t need a passport to find a little joie de vivre close to home.</p>
+          <span class="more">Read more →</span>
         </a>
         <a class="post reveal" href="https://www.debbiespence.com/join-my-search-for-home/">
-          <div class="ph" style="background:#efc9a8">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <rect x="18" y="34" width="64" height="44" rx="6" fill="#2f3e5c"/>
-              <rect x="38" y="24" width="24" height="12" rx="3" fill="none" stroke="#2f3e5c" stroke-width="3"/>
-              <rect x="18" y="50" width="64" height="5" fill="#e2a443"/>
-              <circle cx="34" cy="68" r="5" fill="#b4473a"/>
-              <rect x="56" y="62" width="16" height="10" rx="2" fill="#fbf5ea"/>
-            </svg>
-          </div>
-          <div class="pb">
-            <span class="eyebrow">The Journey</span>
-            <h3>Join My Search for Home</h3>
-            <p>Why one frazzled mom took part of her crew to Europe, and what she was looking for.</p>
-            <span class="more">Read more →</span>
-          </div>
+          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/r9RW20TrQ0Y/download?force=true&w=900" alt="A winding road through the hills of Tuscany"></div>
+          <span class="eyebrow">The Journey</span>
+          <h3>Join My Search for Home</h3>
+          <p>Why this frazzled mom took part of her crew to Europe, and what she went looking for.</p>
+          <span class="more">Read more →</span>
         </a>
       </div>
       <div class="center"><a class="btn ghost" href="https://www.debbiespence.com/blog/">All posts</a></div>
@@ -758,27 +545,38 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <div class="script">À bientôt</div>
-      <p>Thank you for stopping by. Pour a cup of something warm, pull up a chair and stay a while. There’s always another adventure around the corner.</p>
+      <span class="hand">À bientôt!</span>
+      <p>Thank you for stopping by. Pour yourself something warm, and come back soon. There’s always another adventure around the corner.</p>
     </div>
     <nav class="foot-links" aria-label="Footer">
       <a href="#book">The Book</a>
       <a href="#guide">Free E-Book</a>
-      <a href="#pleasures">Shop</a>
-      <a href="#about">About</a>
+      <a href="https://www.debbiespence.com/shop/">Shop</a>
       <a href="https://www.debbiespence.com/blog/">Blog</a>
+      <a href="https://www.debbiespence.com/about-me/">About</a>
       <a href="https://www.pinterest.com/debbiespence5/">Pinterest</a>
       <a href="https://medium.com/@debbiespence_32984">Medium</a>
     </nav>
+    <p class="credits">Photos on Unsplash by
+      <a href="https://unsplash.com/photos/xjflfu9tdh4">Khamkéo</a>,
+      <a href="https://unsplash.com/photos/mPU41vaFzKI">Inna Ko</a>,
+      <a href="https://unsplash.com/photos/c1Jp-fo53U8">Léonard Cotte</a>,
+      <a href="https://unsplash.com/photos/r9RW20TrQ0Y">Luca Micheli</a>,
+      <a href="https://unsplash.com/photos/XK89IwEo244">Daniel Seßler</a>,
+      <a href="https://unsplash.com/photos/J3QlDHTHxZE">Chloe Frost-Smith</a>,
+      <a href="https://unsplash.com/photos/MV5NQ8oV5LU">Yuliia Huzenko</a>,
+      <a href="https://unsplash.com/photos/Z5JJifMtbCo">Rain Bennett</a>,
+      <a href="https://unsplash.com/photos/gp3y7I-RZb0">Evan Buchholz</a> and
+      <a href="https://unsplash.com/photos/yyb5HOnHfus">Pavel Abramiankou</a>.
+    </p>
     <div class="foot-bottom">
       <span>© <span id="yr">2026</span> Debbie Spence · Stories with fun, hope &amp; adventure</span>
-      <span>Made with love, butter &amp; sunshine</span>
+      <span>Written with love, butter &amp; sunshine</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Mobile menu
   const btn = document.querySelector('.menu-btn');
   const menu = document.getElementById('menu');
   btn.addEventListener('click', () => {
@@ -789,7 +587,6 @@
     menu.classList.remove('open'); btn.setAttribute('aria-expanded', false);
   }));
 
-  // Reveal on scroll
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: .12 }) : null;
