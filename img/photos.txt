@@ -1,0 +1,17 @@
+# Photos used on the page (free under the Pexels License).
+# name        pexels-id  width
+hero          3105066    2400
+sunset        28215960   2400
+facade        16703087   900
+eiffel        34896700   1000
+lavender      32992520   1000
+tuscany       9968183    1200
+austria       29049225   1200
+lunch         15521441   1000
+croissant     256523     1000
+cafe          32405361   1600
+croissant2    3681641    600
+coffee        13119734   900
+desk          30706600   900
+writing       6517146    1000
+road          30018173   1000
