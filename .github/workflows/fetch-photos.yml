@@ -1,11 +1,16 @@
-# Downloads the Unsplash photos listed in img/photos.txt into img/ so the site hosts its own copies.
+# Downloads the Pexels photos listed in a manifest into img/ so the site hosts its own copies.
+# Manifest lines: <name> <pexels-photo-id> <width>
 name: Fetch photos
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - img/photos.txt
+    inputs:
+      manifest:
+        description: Manifest file to read
+        default: img/photos.txt
+      branch:
+        description: Branch to commit the photos to (blank = the branch this runs on)
+        default: ""
 
 permissions:
   contents: write
@@ -20,25 +25,21 @@ jobs:
         run: |
           set -u
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          grep -v '^\s*#' img/photos.txt | while read -r name id width; do
+          mkdir -p img
+          grep -v '^\s*#' "${{ inputs.manifest }}" | while read -r name id width; do
             [ -z "${name:-}" ] && continue
             out="img/${name}.jpg"
-            echo "→ $name ($id)"
-            # Unsplash's /download link needs a login, so find the photo's direct images.unsplash.com address.
-            raw=$(curl -fsSL -A "$UA" "https://unsplash.com/napi/photos/${id}" | jq -r '.urls.raw // empty' 2>/dev/null || true)
-            if [ -z "$raw" ]; then
-              raw=$(curl -fsSL -A "$UA" "https://unsplash.com/photos/${id}" | grep -oE 'https://images\.unsplash\.com/photo-[0-9]+-[0-9a-f]+' | head -1 || true)
+            q="auto=compress&cs=tinysrgb&w=${width}"
+            ok=""
+            for file in "pexels-photo-${id}.jpeg" "pexels-photo-${id}.jpg"; do
+              if curl -fsSL -A "$UA" -o "$out" "https://images.pexels.com/photos/${id}/${file}?${q}"; then ok="$file"; break; fi
+            done
+            if [ -z "$ok" ]; then
+              # Newer uploads use other file names, so read the real one off the photo page.
+              file=$(curl -fsSL -A "$UA" "https://www.pexels.com/photo/${id}/" | grep -oE "images\.pexels\.com/photos/${id}/[^\"?]+\.(jpe?g|png)" | head -1 | sed "s#.*/##" || true)
+              if [ -n "$file" ] && curl -fsSL -A "$UA" -o "$out" "https://images.pexels.com/photos/${id}/${file}?${q}"; then ok="$file"; fi
             fi
-            if [ -z "$raw" ]; then
-              echo "::warning::Could not find an image address for $name ($id)"
-              continue
-            fi
-            base="${raw%%\?*}"
-            echo "   $base"
-            if ! curl -fsSL -A "$UA" -o "$out" "${base}?fm=jpg&q=80&w=${width}"; then
-              echo "::warning::Could not download $name ($id)"
-              rm -f "$out"
-            fi
+            if [ -n "$ok" ]; then echo "✓ $name ($id) $ok"; else echo "::warning::Could not download $name ($id)"; rm -f "$out"; fi
           done
           ls -la img/
 
@@ -46,10 +47,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          target="${{ inputs.branch }}"
+          if [ -n "$target" ]; then git checkout -B "$target"; fi
           git add img/*.jpg || true
           if git diff --cached --quiet; then
             echo "No new photos to commit."
           else
-            git commit -m "Add downloaded Unsplash photos"
-            git push
+            git commit -m "Add downloaded Pexels photos"
+            if [ -n "$target" ]; then git push -f origin "$target"; else git push; fi
           fi
