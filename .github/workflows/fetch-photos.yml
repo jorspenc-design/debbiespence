@@ -1,0 +1,44 @@
+# Downloads the Unsplash photos listed in img/photos.txt into img/ so the site hosts its own copies.
+name: Fetch photos
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - img/photos.txt
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download photos
+        run: |
+          set -u
+          failed=0
+          grep -v '^\s*#' img/photos.txt | while read -r name id width; do
+            [ -z "${name:-}" ] && continue
+            out="img/${name}.jpg"
+            echo "→ $name ($id)"
+            if ! curl -fsSL -A "Mozilla/5.0" -o "$out" "https://unsplash.com/photos/${id}/download?force=true&w=${width}"; then
+              echo "::warning::Could not download $name ($id)"
+              rm -f "$out"
+            fi
+          done
+          ls -la img/
+
+      - name: Commit photos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img/*.jpg || true
+          if git diff --cached --quiet; then
+            echo "No new photos to commit."
+          else
+            git commit -m "Add downloaded Unsplash photos"
+            git push
+          fi
