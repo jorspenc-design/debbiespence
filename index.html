@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&family=Mrs+Saint+Delafield&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <!--
-  Photos: free under the Unsplash License, loaded from Unsplash. Photographers are credited in the footer.
-  Personal photos: add Debbie's own photo at img/debbie.jpg and the real cover at img/cover.jpg.
-  Until those files exist, the page falls back to the photo and cover design below.
+  Photos: free under the Pexels License, stored in img/ (see img/photos.txt).
+  Personal photos: replace img/desk.jpg with a photo of Debbie, and add the real cover at img/cover.jpg.
+  Until the cover exists, the page shows the cover design below.
 -->
 <style>
   :root {
@@ -290,7 +290,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="photo">
-    <img src="https://unsplash.com/photos/xjflfu9tdh4/download?force=true&w=2400" alt="Paris rooftops at golden hour, with the Eiffel Tower in the distance">
+    <img src="img/hero.jpg" alt="Paris rooftops and boulevards at golden hour, with the Eiffel Tower on the horizon">
   </div>
 
   <nav class="nav wrap" aria-label="Main">
@@ -325,14 +325,13 @@
         <figure class="polaroid">
           <span class="tape" aria-hidden="true"></span>
           <div class="photo">
-            <img src="img/debbie.jpg" alt="Debbie Spence"
-                 onerror="this.onerror=null;this.alt='A notebook, pen, reading glasses and a cup of coffee';this.src='https://unsplash.com/photos/Z5JJifMtbCo/download?force=true&w=900'">
+            <img src="img/desk.jpg" alt="A hand writing in a journal by lamplight, beside a pair of reading glasses">
           </div>
           <figcaption>at my writing desk</figcaption>
         </figure>
         <figure class="polaroid second" aria-hidden="true">
           <div class="photo">
-            <img src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=600" alt="">
+            <img src="img/croissant2.jpg" alt="">
           </div>
           <figcaption>always the croissant</figcaption>
         </figure>
@@ -366,7 +365,7 @@
           <img class="real" src="img/cover.jpg" alt="Searching for Home book cover"
                onerror="this.closest('.cover').classList.add('is-mock');this.remove()">
           <div class="mock" aria-label="Searching for Home – The European Journey of a Frazzled Mom, by Debbie Spence" role="img">
-            <div class="photo"><img src="https://unsplash.com/photos/yyb5HOnHfus/download?force=true&w=900" alt=""></div>
+            <div class="photo"><img src="img/facade.jpg" alt=""></div>
             <div>
               <div class="k">A Travel Memoir</div>
               <div class="t">Searching<i>for Home</i></div>
@@ -406,19 +405,19 @@
       </div>
       <div class="postcards">
         <article class="postcard reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/c1Jp-fo53U8/download?force=true&w=1000" alt="A lavender field at sunset in the south of France"></div>
+          <div class="photo"><img loading="lazy" src="img/lavender.jpg" alt="Rows of lavender and two trees at dusk in Provence"></div>
           <span class="place">France</span>
           <span class="stamp" aria-hidden="true">Par<br>Avion</span>
           <p class="note">Lavender, sidewalk cafés and fresh bread every morning. My Francophile heart is full.</p>
         </article>
         <article class="postcard reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/r9RW20TrQ0Y/download?force=true&w=1000" alt="A cypress-lined road winding through the hills of Tuscany"></div>
+          <div class="photo"><img loading="lazy" src="img/tuscany.jpg" alt="A cypress-lined road winding through the Tuscan hills at sunset"></div>
           <span class="place">Italy</span>
           <span class="stamp" aria-hidden="true">Posta<br>Italiana</span>
           <p class="note">Cypress roads, golden light and lunches that last all afternoon. Ciao, bella!</p>
         </article>
         <article class="postcard reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/XK89IwEo244/download?force=true&w=1000" alt="A lakeside Austrian village and church at sunset"></div>
+          <div class="photo"><img loading="lazy" src="img/austria.jpg" alt="Hallstatt, Austria, and its church beside the lake on a sunny day"></div>
           <span class="place">Austria</span>
           <span class="stamp" aria-hidden="true">Grüß<br>Gott</span>
           <p class="note">Mountains, still lakes and coffeehouse cake. Where is home, anyway?</p>
@@ -438,19 +437,19 @@
 
       <div class="collage">
         <figure class="reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/J3QlDHTHxZE/download?force=true&w=1200" alt="Pasta and a glass of wine on an outdoor table in the Italian sun"></div>
+          <div class="photo"><img loading="lazy" src="img/lunch.jpg" alt="Salad, olives and glasses of wine on a sunny garden table"></div>
           <figcaption>Long lunches in the sunshine</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=900" alt="A cappuccino and a croissant on a wooden table"></div>
+          <div class="photo"><img loading="lazy" src="img/croissant.jpg" alt="A croissant and a cup of coffee on a café table"></div>
           <figcaption>Café crème &amp; a warm croissant</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/Z5JJifMtbCo/download?force=true&w=900" alt="A notebook, pen, reading glasses and coffee"></div>
+          <div class="photo"><img loading="lazy" src="img/writing.jpg" alt="A hand writing in a notebook beside a coffee mug"></div>
           <figcaption>A fresh page &amp; a good pen</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/gp3y7I-RZb0/download?force=true&w=1400" alt="A Paris café corner with tables and chairs under an awning"></div>
+          <div class="photo"><img loading="lazy" src="img/cafe.jpg" alt="A Paris café terrace with bistro chairs under a red awning"></div>
           <figcaption>A sidewalk table &amp; nowhere to be</figcaption>
         </figure>
       </div>
@@ -475,7 +474,7 @@
   <!-- ============ FREE GUIDE ============ -->
   <section class="guide" id="guide">
     <div class="photo">
-      <img loading="lazy" src="https://unsplash.com/photos/mPU41vaFzKI/download?force=true&w=2400" alt="The Eiffel Tower in golden evening light">
+      <img loading="lazy" src="img/sunset.jpg" alt="The sun setting over Paris and the Eiffel Tower">
     </div>
     <div class="wrap">
       <div class="guide-copy reveal">
@@ -515,21 +514,21 @@
       </div>
       <div class="posts">
         <a class="post reveal" href="https://www.debbiespence.com/my-new-book-is-here/">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/yyb5HOnHfus/download?force=true&w=900" alt="A Paris apartment building with wrought-iron balconies"></div>
+          <div class="photo"><img loading="lazy" src="img/eiffel.jpg" alt="The Eiffel Tower framed by trees in golden light"></div>
           <span class="eyebrow">News</span>
           <h3>My New Book is Here</h3>
           <p><i>Searching for Home – The European Journey of a Frazzled Mom</i> is now available.</p>
           <span class="more">Read more →</span>
         </a>
         <a class="post reveal" href="https://www.debbiespence.com/12-ways-to-enjoy-home-this-summer/">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/MV5NQ8oV5LU/download?force=true&w=900" alt="A cappuccino and a croissant on a wooden table"></div>
+          <div class="photo"><img loading="lazy" src="img/coffee.jpg" alt="A croissant and coffee on a wooden café table"></div>
           <span class="eyebrow">At Home</span>
           <h3>12 Ways to Enjoy Home this Summer</h3>
           <p>You don’t need a passport to find a little joie de vivre close to home.</p>
           <span class="more">Read more →</span>
         </a>
         <a class="post reveal" href="https://www.debbiespence.com/join-my-search-for-home/">
-          <div class="photo"><img loading="lazy" src="https://unsplash.com/photos/r9RW20TrQ0Y/download?force=true&w=900" alt="A winding road through the hills of Tuscany"></div>
+          <div class="photo"><img loading="lazy" src="img/road.jpg" alt="A country road and cypress trees in Tuscany"></div>
           <span class="eyebrow">The Journey</span>
           <h3>Join My Search for Home</h3>
           <p>Why this frazzled mom took part of her crew to Europe, and what she went looking for.</p>
@@ -557,17 +556,22 @@
       <a href="https://www.pinterest.com/debbiespence5/">Pinterest</a>
       <a href="https://medium.com/@debbiespence_32984">Medium</a>
     </nav>
-    <p class="credits">Photos on Unsplash by
-      <a href="https://unsplash.com/photos/xjflfu9tdh4">Khamkéo</a>,
-      <a href="https://unsplash.com/photos/mPU41vaFzKI">Inna Ko</a>,
-      <a href="https://unsplash.com/photos/c1Jp-fo53U8">Léonard Cotte</a>,
-      <a href="https://unsplash.com/photos/r9RW20TrQ0Y">Luca Micheli</a>,
-      <a href="https://unsplash.com/photos/XK89IwEo244">Daniel Seßler</a>,
-      <a href="https://unsplash.com/photos/J3QlDHTHxZE">Chloe Frost-Smith</a>,
-      <a href="https://unsplash.com/photos/MV5NQ8oV5LU">Yuliia Huzenko</a>,
-      <a href="https://unsplash.com/photos/Z5JJifMtbCo">Rain Bennett</a>,
-      <a href="https://unsplash.com/photos/gp3y7I-RZb0">Evan Buchholz</a> and
-      <a href="https://unsplash.com/photos/yyb5HOnHfus">Pavel Abramiankou</a>.
+    <p class="credits">Photos from Pexels:
+      <a href="https://www.pexels.com/photo/3105066/">Paris at golden hour</a>,
+      <a href="https://www.pexels.com/photo/28215960/">Paris sunset</a>,
+      <a href="https://www.pexels.com/photo/34896700/">Eiffel Tower</a>,
+      <a href="https://www.pexels.com/photo/16703087/">Haussmann building</a>,
+      <a href="https://www.pexels.com/photo/32992520/">Provence lavender</a>,
+      <a href="https://www.pexels.com/photo/9968183/">Tuscan road</a>,
+      <a href="https://www.pexels.com/photo/30018173/">Tuscan cypresses</a>,
+      <a href="https://www.pexels.com/photo/29049225/">Hallstatt</a>,
+      <a href="https://www.pexels.com/photo/15521441/">garden lunch</a>,
+      <a href="https://www.pexels.com/photo/256523/">café croissant</a>,
+      <a href="https://www.pexels.com/photo/3681641/">croissant</a>,
+      <a href="https://www.pexels.com/photo/13119734/">coffee</a>,
+      <a href="https://www.pexels.com/photo/32405361/">Paris café</a>,
+      <a href="https://www.pexels.com/photo/30706600/">writing by lamplight</a> and
+      <a href="https://www.pexels.com/photo/6517146/">writing with coffee</a>.
     </p>
     <div class="foot-bottom">
       <span>© <span id="yr">2026</span> Debbie Spence · Stories with fun, hope &amp; adventure</span>
